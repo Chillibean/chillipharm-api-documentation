@@ -22,43 +22,38 @@ You can view CURL examples in the dark area to the right.
 
 # Authentication
 
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
+> To authenticate, use the login endpoint:
 
 ```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
+curl -X POST "https://chillipharm.com/api/v1/login" -d '{"auth": {"email": "user@test.com", "password": "pa$$word"}}' -H "Content-Type: application/json"
 ```
 
-```javascript
-const kittn = require('kittn');
+> The above command returns JSON structured like this:
 
-let api = kittn.authorize('meowmeowmeow');
+```json
+  {
+    "id": 1,
+    "name": "Jane Doe",
+    "email": "user@test.com",
+    "token": "tNKJN8khgvscm86Zy5FPTAyBZqptD4WM-bGU5K9L8ZA"
+  }
 ```
 
-> Make sure to replace `meowmeowmeow` with your API key.
+ChilliPharm uses short-term session tokens whose usage extends their expiry.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+ChilliPharm expects for the session token to be included in all API requests to the server in a header that looks like the following:
 
 `Authorization: meowmeowmeow`
 
 <aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+You must replace <code>meowmeowmeow</code> with the session token.
 </aside>
+
+<aside class="notice">
+The token will expire after 1 hour of inactivity.
+</aside>
+
+A `401` error code will be returned if the email or password is incorrect, the email does not exist, the user is not activated or has been suspended.
 
 # Kittens
 
