@@ -107,6 +107,33 @@ This endpoint retrieves a specific Asset within the specified Library.
 `GET https://chillipharm.com/api/v1/accounts/<Account_ID>/libraries/<Library_ID>/assets/<Asset_ID>`
 
 ## Create an Asset
+
+```shell
+curl -X "POST" "http://example.com/api/kittens"
+  -H "Authorization: meowmeowmeow"
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "name": "Max",
+  "breed": "unknown",
+  "fluffiness": 5,
+  "cuteness": 10
+}
+```
+
 This endpoint creates an Asset within the specified Library.
 
-<aside class="warning">An upload token must be provided</aside>
+### HTTP Request
+
+`POST https://chillipharm.com/api/v1/accounts/<Account_ID>/libraries/<Library_ID>/assets`
+
+### Query Parameters
+
+Parameter | Default | Description | Required
+--------- | ------- | ----------- | --------
+upload_token  | N/A | This grants a time-expired permssion for the creation of this asset | true
+info_fields | {} | A hash of values representing this Assets metadata | true
+
