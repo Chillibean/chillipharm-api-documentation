@@ -2,7 +2,7 @@
 
 ## Get all Assets
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/assets" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/assets" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
@@ -68,7 +68,7 @@ This endpoint retrieves a list of all Assets within the specified Library.
 
 ## Get a Specific Asset
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/assets/<Asset_ID>" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/assets/<Asset_ID>" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:

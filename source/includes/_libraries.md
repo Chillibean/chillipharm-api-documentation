@@ -3,7 +3,7 @@
 ## Get All Libraries
 
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
@@ -48,7 +48,7 @@ include_deleted | false | If set to true, the result will also include deleted L
 ## Get a Specific Library
 
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/123" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries/123" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:

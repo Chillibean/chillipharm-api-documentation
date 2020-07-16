@@ -7,7 +7,7 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 ## Get all root level Nodes
 
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/nodes" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/accounts/<Account_ID>/libraries/<Library_ID>/nodes" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
@@ -42,7 +42,7 @@ This endpoint retrieves a list of all Folders & Collections at the root level of
 ## Get a Specific Node
 
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/nodes/<Node_ID>" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/nodes/<Node_ID>" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
@@ -67,7 +67,7 @@ This endpoint retrieves a specific Node within the specified Library.
 ## Get all children of a Specific Node
 
 ```shell
-curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/nodes/<Node_ID>/children" -H "Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"
+curl -X GET "https://api.chillipharm.dev/libraries/<Library_ID>/nodes/<Node_ID>/children" -H "Authorization: meowmeowmeow"
 ```
 
 > The above command returns JSON structured like this:
