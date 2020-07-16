@@ -250,6 +250,14 @@
               </ul>
           </li>
           <li>
+            <a href="#info-fields" class="toc-h1 toc-link" data-title="Info Fields">Info Fields</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#get-all-info-fields" class="toc-h2 toc-link" data-title="Get all Info Fields">Get all Info Fields</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
             <a href="#folders-amp-collections" class="toc-h1 toc-link" data-title="Folders &amp; Collections">Folders &amp; Collections</a>
               <ul class="toc-list-h2">
                   <li>
@@ -281,7 +289,7 @@
             <a href="#uploading" class="toc-h1 toc-link" data-title="Uploading">Uploading</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#upload" class="toc-h2 toc-link" data-title="Upload">Upload</a>
+                    <a href="#request-upload-permission" class="toc-h2 toc-link" data-title="Request Upload Permission">Request Upload Permission</a>
                   </li>
               </ul>
           </li>
@@ -424,7 +432,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>The ID of the Account to retrieve</td>
 </tr>
 </tbody></table>
-<h1 id='libraries'>Libraries</h1><h2 id='get-all-libraries'>Get All Libraries</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h1 id='libraries'>Libraries</h1><h2 id='get-all-libraries'>Get All Libraries</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -469,7 +477,7 @@ Remember — a happy kitten is an authenticated kitten!
 <td>If set to true, the result will also include deleted Libraries.</td>
 </tr>
 </tbody></table>
-<h2 id='get-a-specific-library'>Get a Specific Library</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/123"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h2 id='get-a-specific-library'>Get a Specific Library</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/123"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -507,12 +515,35 @@ Remember — a happy kitten is an authenticated kitten!
 <td>If set to true, the result will also include deleted Libraries.</td>
 </tr>
 </tbody></table>
+<h1 id='info-fields'>Info Fields</h1>
+<p>Info Fields are user-defined fields that have a title and a type that allow custom data of a type to be attached to Assets.</p>
+<h2 id='get-all-info-fields'>Get all Info Fields</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/accounts/&lt;Account_ID&gt;/info_fields"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">  
+   </span><span class="p">{</span><span class="w">  
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Title"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"string"</span><span class="w">
+   </span><span class="p">},</span><span class="w">
+   </span><span class="p">{</span><span class="w">  
+      </span><span class="nl">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"name"</span><span class="p">:</span><span class="s2">"Reviewed"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"type"</span><span class="p">:</span><span class="s2">"boolean"</span><span class="w">
+   </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint retrieves a list of all Folders &amp; Collections at the root level of a Library.</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/info_fields</code></p>
 <h1 id='folders-amp-collections'>Folders &amp; Collections</h1>
 <p>Folders and Collections are further ways to organise Assets inside a Library.<br>
 Folders and Collections are structured as a nested tree of <strong>Nodes</strong> with a type (either collection or folder).  </p>
 
 <aside class="notice">Collections contain Assets, and Folders contain Collections.</aside>
-<h2 id='get-all-root-level-nodes'>Get all root level Nodes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/nodes"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h2 id='get-all-root-level-nodes'>Get all root level Nodes</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/nodes"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -539,7 +570,7 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 <p>This endpoint retrieves a list of all Folders &amp; Collections at the root level of a Library.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/nodes</code></p>
-<h2 id='get-a-specific-node'>Get a Specific Node</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h2 id='get-a-specific-node'>Get a Specific Node</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -556,7 +587,7 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 <p>This endpoint retrieves a specific Node within the specified Library.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;</code></p>
-<h2 id='get-all-children-of-a-specific-node'>Get all children of a Specific Node</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;/children"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h2 id='get-all-children-of-a-specific-node'>Get all children of a Specific Node</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;/children"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -591,7 +622,7 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 <p>This endpoint retrieves all children of a specific Node within the specified Library.</p>
 <h3 id='http-request-3'>HTTP Request</h3>
 <p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/nodes/&lt;Node_ID&gt;/children</code></p>
-<h1 id='assets'>Assets</h1><h2 id='get-all-assets'>Get all Assets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/assets"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h1 id='assets'>Assets</h1><h2 id='get-all-assets'>Get all Assets</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/assets"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -650,7 +681,7 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 <p>This endpoint retrieves a list of all Assets within the specified Library.</p>
 <h3 id='http-request'>HTTP Request</h3>
 <p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/assets</code></p>
-<h2 id='get-a-specific-asset'>Get a Specific Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/assets/&lt;Asset_ID&gt;"</span> <span class="nt">-H</span> <span class="s2">"Authorization: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MTM0MjI1OTcsInN1YiI6MX0.GsAxGOkUzTNANYfcvT1OM1xxCxIndmXjw-2OkJgXO4a"</span>
+<h2 id='get-a-specific-asset'>Get a Specific Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/assets/&lt;Asset_ID&gt;"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
 </code></pre></div>
 <blockquote>
 <p>The above command returns JSON structured like this:</p>
@@ -683,12 +714,61 @@ Folders and Collections are structured as a nested tree of <strong>Nodes</strong
 <p>This endpoint retrieves a specific Asset within the specified Library.</p>
 <h3 id='http-request-2'>HTTP Request</h3>
 <p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/assets/&lt;Asset_ID&gt;</code></p>
-<h2 id='create-an-asset'>Create an Asset</h2>
+<h2 id='create-an-asset'>Create an Asset</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> <span class="s2">"POST"</span> <span class="s2">"http://example.com/api/kittens"</span>
+  <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Max"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"breed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unknown"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"fluffiness"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cuteness"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
 <p>This endpoint creates an Asset within the specified Library.</p>
+<h3 id='http-request-3'>HTTP Request</h3>
+<p><code>POST https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/assets</code></p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>upload_token</td>
+<td>N/A</td>
+<td>This grants a time-expired permssion for the creation of this asset</td>
+<td>true</td>
+</tr>
+<tr>
+<td>info_fields</td>
+<td>{}</td>
+<td>A hash of values representing this Assets metadata</td>
+<td>true</td>
+</tr>
+</tbody></table>
+<h1 id='uploading'>Uploading</h1><h2 id='request-upload-permission'>Request Upload Permission</h2><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="s2">"https://api.chillipharm.dev/libraries/&lt;Library_ID&gt;/upload_permission"</span> <span class="nt">-H</span> <span class="s2">"Authorization: meowmeowmeow"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">  
+  </span><span class="nl">"presigned_url"</span><span class="p">:</span><span class="s2">"xyz"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"asset_token"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xyz"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<p>This endpoint requests permission to upload a file to an AWS S3 bucket and create an asset.</p>
 
-<aside class="warning">An upload token must be provided</aside>
-<h1 id='uploading'>Uploading</h1><h2 id='upload'>Upload</h2>
-<p>This endpoint retrieves a list of all Libraries within the specified Account that the logged-in User has been given access to.</p>
+<p>Returns an object containing: 
+- a presigned URL for uploading directly to an AWS S3 bucket
+- a unique token required when creating an Asset, which links the upload to the Asset</p>
+<h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://chillipharm.com/api/v1/accounts/&lt;Account_ID&gt;/libraries/&lt;Library_ID&gt;/upload_permission</code></p>
 <h1 id='errors'>Errors</h1>
 <aside class="notice">
 This error section is stored in a separate file in <code>includes/_errors.md</code>. Slate allows you to optionally separate out your docs into many files...just save them to the <code>includes</code> folder and add them to the top of your <code>index.md</code>'s frontmatter. Files are included in the order listed.
