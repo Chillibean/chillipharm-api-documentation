@@ -10,6 +10,7 @@ toc_footers:
 includes:
   - accounts
   - libraries
+  - info_fields
   - folders_and_collections
   - assets
   - uploading
